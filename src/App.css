@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.main-container {
+  max-width: fit-content;
+  margin: 10% auto;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}

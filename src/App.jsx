@@ -1,17 +1,20 @@
 import "./App.css";
 import ChatRoom from "./components/ChatRoom";
 import SignIn from "./components/SignIn";
-import { useAuthState} from 'react-firebase-hooks/auth'
+import SignOut from "./components/SignOut";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "./firebase";
 
 function App() {
   const [user] = useAuthState(auth);
   return (
-    <div className="App">
-      <header></header>
+    <div className="main-container flex flex-col ">
+      <header className="bg-indigo-600 p-6 text-white text-2xl font-bold">
+        Chat Sphere
+      </header>
 
-      <section>
-        { user ? <ChatRoom /> : <SignIn />}
+      <section className="flex-1 overflow-auto">
+        {user ? <ChatRoom /> : <SignIn />}
       </section>
     </div>
   );
